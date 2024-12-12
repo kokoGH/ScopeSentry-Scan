@@ -14,7 +14,7 @@ jobs:
     runs-on: 'ubuntu-latest'
     env:
       CGO_ENABLED: 1
-      GOOS: 'ubuntu-latest'
+      GOOS: 'linux'
       GOARCH: 'arm64'
     steps:
     - uses: actions/checkout@v4
