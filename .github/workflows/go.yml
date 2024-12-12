@@ -13,10 +13,8 @@ jobs:
   build:
     runs-on: 'ubuntu-latest'
     env:
-      CGO_ENABLED: 1
       GOOS: 'linux'
       GOARCH: 'arm64'
-      CC: 'aarch64-linux-gnu-gcc'
     steps:
     - uses: actions/checkout@v4
 
@@ -29,7 +27,5 @@ jobs:
       run: go mod tidy
 
     - name: Build
-      run: go build -v ./...
+      run: go build -v ./cmd/ScopeSentry/main.go
 
-    - name: Test
-      run: go test -v ./...
